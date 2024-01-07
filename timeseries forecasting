@@ -1,0 +1,52 @@
+#i have use 10 year shop sales to predict future sales
+#NAIVE METHOD
+dt<-read.csv(file.choose())
+dt
+install.packages('forecast')
+library(forecast)
+t<-ts(dt,start=2000)
+t
+plot(t)
+n<-naive(t)
+s<-summary(n)
+s
+plot(s)
+#MEANF METHOD
+m<-meanf(t)
+s1<-summary(m)
+s1
+plot(s1)
+#simple MOVING AVERAGES METHOD
+install.packages('TTR')
+install.packages("TTR")
+library(TTR)
+s<-SMA(t,n=2)
+f<-forecast(s)
+f
+s2<-summary(f)
+s2
+plot(s2)
+#weighted moving averages method
+w<-WMA(t,n=7,wts = 1:7,2:7,4:7)
+w
+f1<-forecast(w)
+f1
+s3<-summary(f1)
+s3
+plot(s3)
+#EXPONENSIAL SMOOTHING METHOD
+#SINGLE EXPONENSIAL SMOOTHING
+s<-ses(t,alpha=0.2)
+s
+s4<-summary(s)
+s4
+plot(s4)
+#double exponensial smoothing
+h<-holt(t,alpha = 0.2,beta=0.008)
+h
+s5<-summary(h)
+s5
+plot(s5)
+#weighted moving average method is the best as
+#weighted moving average method is the best as
+#'mase' value is 0.41
