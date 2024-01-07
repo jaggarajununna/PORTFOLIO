@@ -1,0 +1,73 @@
+#collect feedback for the above 15 slected products
+pref<-read.csv(file.choose())
+combine<-expand.grid(ss=c('6.1','6.8','5.8'),
+battery=c('5000','4500','3000'),
+colour=c('black','white','blue'),
+price=c('25000','28000','30000'),
+motherboard=c('ubon','snapdragon','mediatech'))
+combine
+#install conjoint package
+install.packages('conjoint')
+library(conjoint)
+#top 15 combinations are selected
+test<-caFactorialDesign(combine,type="fractional",cards=15)
+test
+levels<-c('6.1','6.8','5.8',
+'5000','4500','3000',
+'black','white','blue',
+'25000','28000','30000',
+'ubon','snapdragon','mediatech')
+levels
+#collect feedback for the above 15 slected products
+pref<-read.csv(file.choose())
+Conjoint(pref,test,levels)
+combine<-expand.grid(ss=c('6.1','6.8','5.8'),
+battery=c('5000','4500','3000'),
+colour=c('black','white','blue'),
+price=c('25000','28000','30000'),
+motherboard=c('ubon','snapdragon','mediatech'))
+combine
+#install conjoint package
+install.packages('conjoint')
+install.packages("conjoint")
+library(conjoint)
+#top 15 combinations are selected
+test<-caFactorialDesign(combine,type="fractional",cards=15)
+test
+levels<-c('6.1','6.8','5.8',
+'5000','4500','3000',
+'black','white','blue',
+'25000','28000','30000',
+'ubon','snapdragon','mediatech')
+levels
+#collect feedback for the above 15 slected products
+pref<-read.csv(file.choose())
+Conjoint(pref,test,levels)
+#my marketing research shows major affecting factoris
+#my marketing research shows major affecting factoris
+#1.motherboard,2.colour,3.price,4.battery,5.screensize
+#my marketing research shows major affecting factoris
+#1.motherboard,2.colour,3.price,4.battery,5.screensize
+#majority of customers expecting 6.8 sceensize
+#my marketing research shows major affecting factoris
+#1.motherboard,2.colour,3.price,4.battery,5.screensize
+#majority of customers expecting 6.8 sceensize
+#majority of customers expecting mediatech processor
+#my marketing research shows major affecting factoris
+#1.motherboard,2.colour,3.price,4.battery,5.screensize
+#majority of customers expecting 6.8 sceensize
+#majority of customers expecting mediatech processor
+#majority of customers expecting price at 25000
+#my marketing research shows major affecting factoris
+#1.motherboard,2.colour,3.price,4.battery,5.screensize
+#majority of customers expecting 6.8 sceensize
+#majority of customers expecting mediatech processor
+#majority of customers expecting price at 25000
+#majority of customers expecting 5000mah battery
+#my marketing research shows major affecting factoris
+#1.motherboard,2.colour,3.price,4.battery,5.screensize
+#majority of customers expecting 6.8 sceensize
+#majority of customers expecting mediatech processor
+#majority of customers expecting price at 25000
+#majority of customers expecting 5000mah battery
+#majority of customers expecting blue colour
