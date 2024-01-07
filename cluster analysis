@@ -1,0 +1,47 @@
+#cluster analysis
+#cluster analyisis is useful for segmenting the customers
+#hirarchial clustering method
+#this will tell total number of clusters can be formed
+#import the dataset
+dt<-read.csv(file.choose())
+dt
+d<-dist(dt,method='euclidean')
+d
+h<-hclust(d,method = 'average')
+h
+plot(h)
+#install nbclust package
+install.packages('NbClust')
+NbClust(dt,method = 'ward.D')
+library(NbClust)
+#cluster analysis
+#cluster analyisis is useful for segmenting the customers
+#hirarchial clustering method
+#this will tell total number of clusters can be formed
+#import the dataset
+dt<-read.csv(file.choose())
+dt
+d<-dist(dt,method='euclidean')
+d
+h<-hclust(d,method = 'average')
+h
+plot(h)
+#install nbclust package
+install.packages('NbClust')
+install.packages("NbClust")
+library(NbClust)
+NbClust(dt,method = 'ward.D')
+#kmeans clustering method
+#this method is predetermined clustering method
+kmeans(dt,3)
+#customers are segmented into there segments
+#customers are segmented into there segments
+#     salary no.of.cars sfrequency
+#customers are segmented into there segments
+#     salary no.of.cars sfrequency
+#1 622142.89  4.4444444  10.333333 -9 people in clustor
+#customers are segmented into there segments
+#     salary no.of.cars sfrequency
+#1 622142.89  4.4444444  10.333333 -9 people in clustor
+#2 319942.80  4.3000000  10.200000 -10 people in clustor
+#this clustoring accuracy is  90.1%
