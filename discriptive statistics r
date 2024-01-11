@@ -1,0 +1,58 @@
+#DISCRIPTIVE STATISTICS:
+#IMPORT DATASET
+dt<-read.csv(file.choose())
+dt
+data.class(dt)
+sum(is.na(dt))
+dt[1]
+#DISCRIPTIVE STATISTICS:
+#IMPORT DATASET
+dt<-read.csv(file.choose())
+dt
+data.class(dt)
+sum(is.na(dt))
+dt(c[10,11])
+dt[c(11,12)]
+d<-dt[c(10,11,12)]
+d
+#DISCRIPTIVE STATISTICS:
+#IMPORT DATASET
+dt<-read.csv(file.choose())
+dt
+data.class(dt)
+sum(is.na(dt))
+d<-dt[c(10,11,12)]
+d
+mean(dt)
+mean(d)
+d<-dt[10]
+d
+mean(d)
+mode(d)
+desc(dt)
+install.packages("DescTools")
+library(DescTools)
+Mean(d)
+dt
+data.class(dt)
+sum(is.na(dt))
+d<-dt[10]
+d
+Mean(d)
+Mean(head(d))
+head(d)
+h<-head(d)
+Mean(h)
+plot(d)
+install.packages('dlookr')
+library(dlookr)
+eda_web_report(dt)
+eda_report(dt)
+eda_report(dt)
+eda_report(dt)
+install.packages('ExPanDaR')
+library(ExPanDaR)
+ExPanD(dt)
+install.packages("DataExplorer")
+library(DataExplorer)
+create_report(dt)
