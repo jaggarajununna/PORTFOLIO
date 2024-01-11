@@ -1,0 +1,98 @@
+#SARIMA:SEASONAL AUTOREGRESSIVE INTEGREATED MOVING AVERAGES MODEL
+#install required pacakges - tseries and foecast
+install.packages('tseries')
+library(tseries)
+install.packages('forecast')
+library(forecast)
+#use the built in dataset airpassanges
+sales<-AirPassengers
+sales
+#plot the dataset to find mean and varience
+plot(sales)
+#now apply log to adjust the mean
+sales<-log(sales)
+sales
+plot(sales)
+#conduct the stationarity test
+#we can do two test adf and kpss test
+#augmented dickey fuller test
+#kwiatkowski phillips schimidt shin test
+adf.test(sales)
+kpss.test(sales)
+#null hypothesis data has no stationarity
+#alternative hypothesis data has stationarity
+#now use auto arima this auto adjust varience and find pqd value
+auto.arima(sales,trace=T)
+#now run arima using the pqd value from auto arima
+a<-arima(sales,order=c(0,1,1),seasonal = list(c(0,1,1),12))
+#now run arima using the pqd value from auto arima
+a<-arima(sales,order=c(0,1,1),seasonal = list(c(0,1,1)),12)
+#now run arima using the pqd and PQD values from auto arima
+a<-arima(sales,order=c(0,1,1),seasonal = list(c(0,1,1)),12)
+#now run arima using the pqd and PQD values from auto arima
+a<-arima(sales,order=c(0,1,1),seasonal = order(c(0,1,1)),12)
+#now run arima using the pqd and PQD values from auto arima
+a<-arima(sales,order=c(0,1,1),seasonal = list(order=c(0,1,1)),12)
+#now run arima using the pqd and PQD values from auto arima
+a<-arima(sales,order=c(0,1,1),seasonal = list(order=c(0,1,1),12))
+a
+#SARIMA:SEASONAL AUTOREGRESSIVE INTEGREATED MOVING AVERAGES MODEL
+#install required pacakges - tseries and foecast
+install.packages('tseries')
+install.packages("tseries")
+library(tseries)
+install.packages('forecast')
+install.packages("forecast")
+library(forecast)
+#use the built in dataset airpassanges
+sales<-AirPassengers
+sales
+#plot the dataset to find mean and varience
+plot(sales)
+#now apply log to adjust the mean
+sales<-log(sales)
+sales
+plot(sales)
+#conduct the stationarity test
+#we can do two test adf and kpss test
+#augmented dickey fuller test
+#kwiatkowski phillips schimidt shin test
+adf.test(sales)
+kpss.test(sales)
+#SARIMA:SEASONAL AUTOREGRESSIVE INTEGREATED MOVING AVERAGES MODEL
+#install required pacakges - tseries and foecast
+install.packages('tseries')
+install.packages("tseries")
+library(tseries)
+install.packages('forecast')
+install.packages("forecast")
+library(forecast)
+#use the built in dataset airpassanges
+sales<-AirPassengers
+sales
+#plot the dataset to find mean and varience
+plot(sales)
+#now apply log to adjust the mean
+sales<-log(sales)
+sales
+plot(sales)
+#conduct the stationarity test
+#we can do two test adf and kpss test
+#dataset is stationary
+#augmented dickey fuller test
+#kwiatkowski phillips schimidt shin test
+adf.test(sales)
+kpss.test(sales)
+#null hypothesis data has no stationarity
+#alternative hypothesis data has stationarity
+#now use auto arima this auto adjust varience and find pqd value
+auto.arima(sales,trace=T)
+#now run arima using the pqd and PQD values from auto arima
+a<-arima(sales,order=c(0,1,1),seasonal = list(order=c(0,1,1),12))
+a
+summary(a)
+#forecasting the sales for next 15 months
+f<-forecast(a,15)
+#as MASE value is less than 1 it shows model is better than naive method
+#plot the forecast sales
+plot(f)
