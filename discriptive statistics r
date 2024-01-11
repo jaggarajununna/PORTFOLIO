@@ -4,13 +4,6 @@ dt<-read.csv(file.choose())
 dt
 data.class(dt)
 sum(is.na(dt))
-dt[1]
-#DISCRIPTIVE STATISTICS:
-#IMPORT DATASET
-dt<-read.csv(file.choose())
-dt
-data.class(dt)
-sum(is.na(dt))
 install.packages('dlookr')
 library(dlookr)
 eda_web_report(dt)
