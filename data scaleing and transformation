@@ -1,0 +1,27 @@
+#SCALING OF DATA
+#USE THE TREES DATASET IN R
+dt<-trees
+dt
+#USE BOXPLOT TO FIND OULIERS
+boxplot(dt)
+#USE LOG TRANSFORMATION TO REDUCE OUTLIERS AND DATA NORMALLY DISTRIBUTED
+l<-log(dt)
+boxplot(l)
+#USE SCALING METHOD TO MAKE DATA DISRIBUTION NORMAL
+s<-scale(dt)
+boxplot(s)
+#INSTALL CARET PACKAGE
+install.packages('caret')
+library(caret)
+#USE STANDARD SCALING METHOD TO MAKE DATA DISRIBUTION NORMAL
+ss<-preProcess(trees,method = c('center','scale'))
+s1<-predict(ss,dt)
+boxplot(s1)
+#USE BOXCOX TRANSFORMATION TO REDUCE OUTLIERS
+b<-preProcess(trees,method='BoxCox')
+b1<-predict(b,dt)
+boxplot(b1)
+#USE YEOJOHNSON SCALING TO REDUCE OUTLIERS
+y<-preProcess(trees,method='YeoJohnson')
+y1<-predict(y,dt)
+boxplot(y1)
